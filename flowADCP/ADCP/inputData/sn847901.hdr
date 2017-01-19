@@ -1,0 +1,218 @@
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\sn847901.prf]
+---------------------------------------------------------------------
+Number of measurements                100801
+Number of checksum errors             0 
+Time of first measurement             29/06/2016 12:00:00
+Time of last measurement              30/06/2016 16:00:00
+
+User setup
+---------------------------------------------------------------------
+Profile interval                      1 sec
+Number of cells                       25
+Cell size                             10 cm
+Average interval                      1 sec
+Measurement load                      100 %
+Transmit pulse length                 0.10 m
+Blanking distance                     0.20 m
+Compass update rate                   1 sec
+Distance measurements                 DISABLED
+Wave measurements                     DISABLED
+Wave - Powerlevel                     LOW
+Wave - Interval                       3600 sec
+Wave - Number of samples              1024
+Wave - Sampling rate                  1 Hz
+Wave - Cell size                      1.00 m
+Analog input 1                        STANDARD
+Analog input 2                        STANDARD
+Power output                          DISABLED
+Powerlevel                            HIGH
+Coordinate system                     ENU
+Sound speed                           MEASURED
+Salinity                              35.0 ppt
+Distance between pings                10.00 m
+Number of beams                       3
+Number of pings per burst             23
+Software version                      1.36 Beta6
+Deployment name                       sn8479
+Wrap mode                             OFF
+Deployment time                       29/06/2016 12:00:00
+Comments                              
+System1                               19
+System2                               15
+System3                               5
+System4                               437
+System5                               512
+System9                               16386
+System10                              96
+System11                              0
+System12                              0
+System13                              0
+System14                              1
+System16                              25
+System17                              1182
+System22                              3600
+System28                              1
+System29                              1
+System30                              24
+System31                              15618 15646 15673 15699
+System32                              0
+System33                              0
+System34                              167
+System35                              53
+System36                              10709
+System38                              0
+System39                              0
+System40                              0
+System41                              0
+System42                              0
+System43                              0
+System44                              0
+System45                              6
+Start command                         Recorder deployment
+CRC download                          ON
+
+Hardware configuration
+---------------------------------------------------------------------
+Serial number                         AQD 8479
+Hardware revision                     4 (E)
+Recorder size                         185 MByte
+Firmware version                      3.39
+Velocity range                        HIGH
+Power output                          12V
+Sync signal data out delay            0 sec
+Sync signal power down delay          0 sec
+
+Head configuration
+---------------------------------------------------------------------
+Pressure sensor                       YES
+Compass                               YES
+Tilt sensor                           YES
+System 1                              1
+Head frequency                        2000 kHz
+Serial number                         ASP 5800
+Transformation matrix                 1.5774 -0.7891 -0.7891
+                                      0.0000 -1.3662 1.3662
+                                      0.3677 0.3677 0.3677
+Pressure sensor calibration           0 0 4247 15470
+Number of beams                       3
+System5                               25 25 25 0
+System7                               -17607 1293 11642 -156
+                                      -17175 1529 11762 -566
+System8                               1 0 0
+                                      0 -1 0
+                                      0 0 -1
+System9                               1 0 0
+                                      0 1 0
+                                      0 0 1
+System10                              0 1 -1 0
+System11                              0 1 1 0
+System13                              1481 259 7128 10849
+System14                              -16114 1318 10893 -254
+                                      -15854 -1397 10820 -278
+System15                              31827 598 -497 598
+                                      32767 -1121 -484 205
+                                      32013 -65 -211 -11
+                                      0 0 0 0
+System16                              0 0 0 0
+System17                              4550
+System18                              3600
+System19                              3600
+System20                              10000
+
+
+Current profile cell center distance from head (m)
+---------------------------------------------------------------------
+  1    0.30
+  2    0.40
+  3    0.50
+  4    0.60
+  5    0.70
+  6    0.80
+  7    0.90
+  8    1.00
+  9    1.10
+ 10    1.20
+ 11    1.30
+ 12    1.40
+ 13    1.50
+ 14    1.60
+ 15    1.70
+ 16    1.80
+ 17    1.90
+ 18    2.00
+ 19    2.10
+ 20    2.20
+ 21    2.30
+ 22    2.40
+ 23    2.50
+ 24    2.60
+ 25    2.70
+
+Data file format
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.v1]
+ 1   Velocity Cell 1 (Beam1|X|East)   (m/s)
+ 2   Velocity Cell 2 (Beam1|X|East)   (m/s)
+     .
+     .
+ n   Velocity Cell n (Beam1|X|East)   (m/s)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.v2]
+ 1   Velocity Cell 1 (Beam2|Y|North)  (m/s)
+ 2   Velocity Cell 2 (Beam2|Y|North)  (m/s)
+     .
+     .
+ n   Velocity Cell n (Beam2|Y|North)  (m/s)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.v3]
+ 1   Velocity Cell 1 (Beam3|Z|Up)     (m/s)
+ 2   Velocity Cell 2 (Beam3|Z|Up)     (m/s)
+     .
+     .
+ n   Velocity Cell n (Beam3|Z|Up)     (m/s)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.a1]
+ 1   Amplitude Cell 1 (Beam1)         (counts)
+ 2   Amplitude Cell 2 (Beam1)         (counts)
+     .
+     .
+ n   Amplitude Cell n (Beam1)         (counts)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.a2]
+ 1   Amplitude Cell 1 (Beam2)         (counts)
+ 2   Amplitude Cell 2 (Beam2)         (counts)
+     .
+     .
+ n   Amplitude Cell n (Beam2)         (counts)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.a3]
+ 1   Amplitude Cell 1 (Beam3)         (counts)
+ 2   Amplitude Cell 2 (Beam3)         (counts)
+     .
+     .
+ n   Amplitude Cell n (Beam3)         (counts)
+
+---------------------------------------------------------------------
+[P:\16_068-metingZwin\3_Uitvoering\meting30062016\positie 1\convert\sn847901.sen]
+ 1   Month                            (1-12)
+ 2   Day                              (1-31)
+ 3   Year
+ 4   Hour                             (0-23)
+ 5   Minute                           (0-59)
+ 6   Second                           (0-59)
+ 7   Error code
+ 8   Status code
+ 9   Battery voltage                  (V)
+10   Soundspeed                       (m/s)
+11   Heading                          (degrees)
+12   Pitch                            (degrees)
+13   Roll                             (degrees)
+14   Pressure                         (dbar)
+15   Temperature                      (degrees C)
+16   Analog input 1
+17   Analog input 2

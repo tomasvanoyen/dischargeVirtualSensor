@@ -1,0 +1,111 @@
+import numpy as np 
+from analyzeShapeFile import analyzeShapeFileFunctions as analyzeSh 
+from scipy.signal import argrelextrema 
+
+# ----------------------------------------------------------------------------------------------------------------- #
+class analyzeDischarge(object):
+    """
+    Object to analyze the discharge through the inlet.  
+    """
+    def __init__(self, dfTrans, dfPoints): 
+        self.dfTrans = dfTrans 
+        self.dfPoints = dfPoints  
+
+    
+# ----------------------------------------------------------------------------------------------------------------- #
+    def defineSections(self):
+        idxmaxL = []
+        # take the first into account
+        idxmax = self.dfTrans.index[0]
+        idxmaxL.append(idxmax)
+        for i in np.arange(len(self.dfPoints['xRelPoints']) - 1):
+            j = i + 1
+            xF = self.dfPoints['xRelPoints'][i]
+            xL = self.dfPoints['xRelPoints'][j]
+            dfSec = self.dfTrans[ (xF <= self.dfTrans['xRel']) & (xL >= self.dfTrans['xRel'])]
+
+            checkMax = np.array(dfSec['zAdj'].values)
+            if len(argrelextrema(checkMax, np.greater)[0]) > 0: 
+                idxmax = dfSec['zAdj'].idxmax()
+                print idxmax, dfSec['zAdj'].loc[idxmax]
+                idxmaxL.append(idxmax)
+                
+            else:
+                dx = np.abs(dfSec['xRel'].iloc[0] - dfSec['xRel'].iloc[-1])
+                targetX = dfSec['xRel'].iloc[0] + dx*0.5 
+                idxArray, value = analyzeSh.find_nearest(dfSec['xRel'].values, targetX)
+                indices = list(np.where( dfSec['xRel'] == value )[0])
+                idxmax = dfSec.iloc[indices].index.values[0]
+                print idxmax, dfSec['zAdj'].loc[idxmax]
+                idxmaxL.append(idxmax)
+                
+        
+        # take the last into account
+        idxmax = self.dfTrans.index[-1]
+        idxmaxL.append(idxmax)
+        
+        dfListSlices = []
+        
+        for i in np.arange(len(idxmaxL) - 1): 
+            j = i + 1
+            idxF = idxmaxL[i]
+            idxL = idxmaxL[j]
+            print idxF, idxL 
+            dfSlice = self.dfTrans.loc[idxF:idxL]
+            dfListSlices.append(dfSlice)
+
+        self.sectionInfo = {'points': [p for p in self.dfPoints['xRelPoints'].values], 
+                            'sections' : dfListSlices }
+            
+
+# ----------------------------------------------------------------------------------------------------------------- #
+    def computeArea(self, dfSection, xPoint, level):
+        # check section below level - continuous 
+        #
+        # 0. check if level is above point level 
+        indexP = list(np.where(dfSection['xRel'] == xPoint)[0])
+        inP = dfSection.iloc[indexP].index.values[0]
+        zlevel = dfSection['zAdj'].iloc[indexP].values[0]   
+        print zlevel, level
+
+        if (zlevel < level):
+            # 1. check maximum distance between points in xdirection
+            dfSection['diff'] = dfSection['xRel'].diff()
+            dxMax = np.nanmax(dfSection['diff'].values)
+            print dfSection 
+            del dfSection['diff']            
+                
+            # 2. get points where bottom is below given level 
+            dfSlice = dfSection[dfSection['zAdj'] < level]
+            
+            # 3. check distance between the points 
+            dfSlice['diff'] = dfSlice['xRel'].diff()
+            dfSlice['larger'] = dfSlice['diff'] > dxMax 
+
+            indexL = list(np.where(dfSlice['larger'] == True)[0])
+            inL = dfSlice.iloc[indexL].index.values
+            indexE = len(dfSlice) - 1
+            inE = dfSlice.iloc[indexE].index.values[0] 
+            print dfSlice
+            print indexL, indexE 
+            for ind in indexL: 
+                print ind, indexP
+                if ind > indexP: 
+                    lDrop = np.arange(ind, indexE+1)
+                    try:
+                        dfSlice = dfSlice.drop(dfSlice.index[lDrop])
+                    except:
+                        pass 
+                    
+                    print dfSlice.head(15)
+            
+            
+            
+        
+
+
+
+
+
+            
+            
