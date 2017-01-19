@@ -7,4 +7,4 @@ An overlying layer is anticipated which combines the depth-averaged velocity wit
 
 2/ both packages are still quite under construction 
 
-3/ code depends on pyproj (as non-usual package). Ohter packages are a.o. pandas, Tkinter, datetime 
+3/ code depends on pyproj (as non-usual package). Other packages are a.o. pandas, Tkinter, datetime 
