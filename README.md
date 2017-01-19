@@ -6,3 +6,5 @@ An overlying layer is anticipated which combines the depth-averaged velocity wit
 1/ loading the raw data takes a while (the for loop going through the files needs to be reconsidered). The pickle files which allow analysis/plotting of data are also provided. 
 
 2/ both packages are still quite under construction 
+
+3/ code depends on pyproj (as non-usual package). Ohter packages are a.o. pandas, Tkinter, datetime 
