@@ -4,13 +4,15 @@ from analyzeShapeFile import analyzeShapeFileFunctions as analyzeSh
 from analyzeShapeFile import computeDischarge as analyzeDis
 import matplotlib.pyplot as plt
 import pyproj
-from osgeo.osr import SpatialReference, CoordinateTransformation
+#from osgeo.osr import SpatialReference, CoordinateTransformation
+import os
 import itertools
 
 # ----------------------------------------------------------------------------------------------------------------- #
 #shDir = 'P:\\16_068-metingZwin\\3_Uitvoering\\metingINBO'
 #shDir = '/home/tomas/Documents/thuis/Misc/pythonScripts/rtkShapefiles/metingINBO'
-shDir = '/projects/16_068_veld_meting_zwin/metingINBO'
+#shDir = '/projects/16_068_veld_meting_zwin/metingINBO'
+shDir = os.path.join(os.getcwd(),"metingINBO")
 fileName = 'Zwin_8_7_2016'  #extension apparantly is not necessary
 
 switchClicking  = False
