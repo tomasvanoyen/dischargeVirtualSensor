@@ -18,8 +18,8 @@ Last changes:  19 - 01 - 2017
 
 import datetime
 import Tkinter, tkFileDialog
-import ADCP.analyzeADCP.analyzeFunctions as adcpAnalyze
-import ADCP.analyzeADCP.plotFunctions as adcpPlot
+import analyzeADCP.analyzeFunctions as adcpAnalyze
+import analyzeADCP.plotFunctions as adcpPlot
 
 # 0. load and filter of data
 # -----------------
