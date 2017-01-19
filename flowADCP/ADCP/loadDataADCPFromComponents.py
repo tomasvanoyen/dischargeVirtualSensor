@@ -10,7 +10,7 @@ contact: tomas.vanoyen@mow.vlaanderen.be
 
 import pandas as pd
 import Tkinter, tkFileDialog
-import ADCP.loadADCP.loadFunctions as adcpLoad
+import loadADCP.loadFunctions as adcpLoad
 import numpy as np
 
 # --
