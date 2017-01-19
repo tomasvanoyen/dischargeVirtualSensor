@@ -12,8 +12,8 @@ Last changes:  19 - 01 - 2017
 """
 
 import datetime
-import ADCP.analyzeADCP.analyzeFunctions as adcpAnalyze
-import ADCP.analyzeADCP.plotFunctions as adcpPlot
+import analyzeADCP.analyzeFunctions as adcpAnalyze
+import analyzeADCP.plotFunctions as adcpPlot
 import Tkinter, tkFileDialog
 import matplotlib.pyplot as plt
 from matplotlib.dates import date2num
